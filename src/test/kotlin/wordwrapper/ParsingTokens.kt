@@ -24,12 +24,12 @@ fun wrap(tokens: Sequence<String>, columns: Int = 7): List<String> {
     val wrapped = mutableListOf<String>()
     var currentRow = ""
     tokens.forEach {
-        val candidate = "$currentRow $it".trim()
-        currentRow = if (candidate.length > columns) {
+        val candidateRow = "$currentRow $it".trim()
+        currentRow = if (candidateRow.length > columns) {
             wrapped.add(currentRow)
             it
         } else {
-            candidate
+            candidateRow
         }
     }
     wrapped.add(currentRow)
