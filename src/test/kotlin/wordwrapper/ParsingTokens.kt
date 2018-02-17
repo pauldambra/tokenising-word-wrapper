@@ -5,7 +5,6 @@ import assertk.assertions.containsAll
 import org.jetbrains.spek.api.Spek
 import org.jetbrains.spek.api.dsl.context
 import org.jetbrains.spek.api.dsl.it
-import kotlin.coroutines.experimental.buildSequence
 
 object ParsingTokens : Spek(
 {

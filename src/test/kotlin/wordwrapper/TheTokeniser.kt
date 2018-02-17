@@ -24,4 +24,17 @@ object TheTokeniser : Spek(
             assert(tokenisedStream.toList()).isEqualTo(expectedTokenStream.toList())
         }
     }
+
+    context("tokenising by passing in a tokeniser") {
+        it("can tokenise on numbers") {
+            val input = "cat number 5 has 6 pajamas"
+
+            val tokenisedStream = tokenise(
+                    input,
+                    fun(s) = s.split("\\d+".toRegex()))
+
+            val expectedTokenStream = sequenceOf("cat number ", " has ", " pajamas")
+            assert(tokenisedStream.toList()).isEqualTo(expectedTokenStream.toList())
+        }
+    }
 })
